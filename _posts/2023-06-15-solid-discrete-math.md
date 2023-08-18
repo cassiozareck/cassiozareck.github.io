@@ -17,8 +17,17 @@ I will be honest, it isnt easy. You have to put your attention on this and have 
 We generally don't try to abstract an algorithm. We don’t think in it with mathematical therms. This is bad siince the own act of write algorithms turns itself into an algorithm. When you try to represent a graph in a mathematical way, thinking about it abstractly without programming language barriers you can understand much more whats happening and how to manipulate things. A good algorithm isn’t created thinking in programming but rather on abstract (imaginary) objects we can manipulated. Then we can try to make the computer understand. 
 
 ### About SOLID principles
-In half of May I also started to read Clean Code as I stopped to contribute. This books is needed if you work with code daily. It is a guide to how save time, money and let a software survive to more time by teaching you how to write good code. But I'll be honest with you that the protagonist of the book is Java. Abstract factory, small functions, these aren't things that is common in Go, looking at any open-source code from a medium project you will see that. 
-Also you have to be very carefull about the Dependency Injection principle. I've made few contributions doing it but it was a nighmare if its uncessary. It gets the code very complex and hide the real problem.
+In half of May I also started to read Clean Code as I stopped to contribute. This books is needed if you work with code daily. It is a guide to how save time, money and let a software survive to more time by teaching you how to write good code. But I'll be honest with you that the protagonist of the book is Java. Abstract factory, small functions, these aren't things that is common in Go, looking at any open-source code from a medium project you will see that. Bigger functions make way more sense and are more readable sometimes.
+
+### A bit of what I learned/reinforced
+  - Open-closed principle can be hard. This require a good understand about OOP and sometimes there's not much sense on make a lot of inhretance and exotic classes. But always try to make your code extensible without have to change it everytime.
+  - The level of a function should always be the same. If you need to do lower-level operations call lower-level functions dont try to embed it into the code.
+  - Always make interfaces when dealing with an external API that can change. Create a protection layer
+
+
+
+
+
 
 
 
