@@ -5,21 +5,18 @@ categories: [professional]
 tags: [go, open-source, team, learning, experience]
 ---
 
-### The beginning
-I’d never contributed to open-source before. Barely I saw some repositories and became scared of how people could read more than 10k of code and understand how things work. I was wondering how I could start in this world, even more when I was really liking Golang’s world (you know, for a junior to land a job on a Go job probably his efforts would be 2x than a Node or Python junior dev).
-Then I found GSoC! Good place to start. A Google program to help beginners to contribute, I tried to choose the smallest project made in Go (the smallest was very big). So my journey started with Keploy, when I started it had something around 210 commits
+It was February. I’d never contributed to open-source before. Barely I saw some repositories and became scared of how people could read more than 10k of code and understand how things work. I was wondering how I could start in this world, even more when I was really liking Golang’s world (you know, for a junior to land a job on a Go job probably his efforts would be 2x than any Node or Python junior dev).
+Then I remembered Google Summer of Code. A Google program to help beginners to start in open-rource. Great place to start! In a sumary you pick a organization to apply and make a proposal for they to solve some tasks. If you goes well you earn some money while work for the company. They also can make some tasks to see if you are good. I tried to choose the smallest project made in Go (the smallest had around of 10k of lines of code). So my journey started with Keploy. 
 
 ### Some history
-I was having trouble even understanding what Keploy was, spending some time on it I figured out it was a tool that can test APIs. Basically it stores your APIs responses by recording it and when you need to test it makes these calls to see if the response is matching the last state. Then starting to read its code I almost gave up. I was not understanding.
-
+I was having trouble even understanding what Keploy was, it had about 210 commits on its CLI repository. Spending some time reading its documentation I figured out it was a tool that can test APIs. Basically it stores your APIs responses by recording it and when you need to test it makes these calls to see if the response is matching the last state. Then starting to read its code I almost gave up. I was not understanding anything. 
 In the GSoC you need to do some tasks to be accepted. Keploy had a list of them and I started to work on it. My first PR was improving Keploy test coverage. I could barely increase it 0.5% but it was a thing. There were about 6 tasks. 
 But then I kind of put myself into a trap. In my second contribution I chose a task related to diff between expected and actual result of Rest APIS (basically a JSON differ). There weren't any easy alternatives for Go as they wanted diffs side-by-side. I had to do it with my own hand.
-It took me some weeks and more than 200 lines of (a bit messy) code. I saw others making PRs doing the same task but they used "workarounds" that weren't any way good; they looked like some old terminal with glitched buffers. It was merged
-I also make a way to pipe logs to files and also mock the test exporter so we could test it without doing real OS operations. But there were tasks too complex for me at this time. Like use GRpC. I was just a beginner at Go’s world. And also I was beginning at a CS university. Time was a problem
+It took me some weeks and more than 200 lines of (a bit messy) code. I saw others making PRs doing the same task but they used "workarounds" that weren't any way good; they looked like some old terminal with glitched buffers. This PR yield almost 20 comments and lots of discussion.
+I also write code to pipe logs to files and also mock the test exporter so we could test it without doing real OS operations. But there were tasks too complex for me at this time. Like use GRpC. I was just a beginner at Go’s world. And also I was beginning at a CS university. Time was a problem
 
 ### I was beaten
-There was a guy that made all the 6 tasks in few days. Helped to create a documentation for the Keploy’s API and even contribute to non-related parts of the project like the SDK. I thought that maybe my 15 pages 
-
+There was a guy that made all the 6 tasks in few days. Helped to create a documentation for the Keploy’s API and even contribute to non-related parts of the project like the SDK. I thought that maybe my 15 pages proposal would save me (if I didn)
 ## TODO: day i started, neha message, 
 
 ### My learning and experience
