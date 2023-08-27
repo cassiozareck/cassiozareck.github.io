@@ -16,8 +16,7 @@ It took me some weeks and more than 200 lines of (a bit messy) code. I saw other
 I also write code to pipe logs to files and also mock the test exporter so we could test it without doing real OS operations. But there were tasks too complex for me at this time. Like use GRpC. I was just a beginner at Go’s world. And also I was beginning at a CS university. Time was a problem
 
 ### I was beaten
-There was a guy that made all the 6 tasks in few days. Helped to create a documentation for the Keploy’s API and even contribute to non-related parts of the project like the SDK. I thought that maybe my 15 pages proposal would save me (if I didn)
-## TODO: day i started, neha message, 
+There was a guy that made all the 6 tasks in few days, helped to create a documentation for the Keploy’s API and even contribute to non-related parts of the GSoC project he has choosed, like the SDK. I thought that maybe my 15 pages proposal would save me. But it didnt unfortunately. I released another PR mocking a component so test could be made without IO operations but I couldnt beat this guy, he was more dedicated than me and he did deserves this. But it was a meaningfully experience and I ended up winning also. 
 
 ### My learning and experience
 I will make this in points since this was a wonderful experience where I learned a lot: 
