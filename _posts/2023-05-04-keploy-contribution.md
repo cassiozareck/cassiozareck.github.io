@@ -21,17 +21,23 @@ There was a guy that did all the 6 tasks in a few days, helped to create a docum
 
 ### My learning and experience
 I will make this in points since this was a wonderful experience where I learned a lot:
-- Rest APIs, http, and backend in general: I think half of my time was working with Rest APIs. Most of the tests were record together with JSON body, http headers and I had to work on it
-- Reading a software code requires some days of “I'm not understanding a shit”. Be patient and understand that you will need some days so you can land on it.
-- If a tool/lib exists, don’t rewrite yourself. Even easy tools are way, again, way more complex than you can think. I had to do my JSON differ because I had no alternative but it was far from being good and it took me more time than I ever thought and more than 200 lines of code.
-- Your code probably has more side-effects on the software than you think. Be careful when writing new code.
-- Git. You don’t understand how much I had to push myself to do some esoteric git commands because I missed the branch, forced push something wrong, someone pushed changes exactly in the file I was and now I have to resolve merge conflicts, rebasing… I thought I knew something of Git but nah.
-- Don’t try to do everything at the same time. Prioritize things. Almost every push you will make probably some maintainer will find an issue. It's not because it's working it hasn't any issue.
-- Communication is everything. Don't be ashamed to ask. There are people that were in the project way before you and can give you some advice, you will learn a lot with them. Don’t stay on a project made by the community where experts don't help the community.
-- Tests are complex, always do but take care of decisions, mock things cause overengineering and most of the time it's not necessary. Table-driven tests can be bad in some places.
-- Yeah concurrency is important. Even on a small project like Keploy I had trouble with outputs being mixed on stdout because the API Tester were run concurrently. At first I thought it was my code but another guy also stated a problem with race conditions. I think they already solved it.
-- Designing your implementation as a proposal is hard but it's worth it. I had to write features on a document and kind of explain the purpose of the feature and how it would be implemented. This is solid as rock. Always try to first model your changes, don't go coding without thinking, write it on a paper, draw diagrams and try to understand how this feature will “glue” with others.
+- **Rest APIs, http, and backend in general**. I think half of my time was working with Rest APIs. Most of the tests were record together with JSON body, http headers and I had to work on it
+- **Reading a software code requires some days of “I'm not understanding a shit”**. Be patient and understand that you will need some days so you can land on it.
+- **If a tool/lib exists, don’t rewrite yourself**. Even easy tools are way, again, way more complex than you can think. I had to do my JSON differ because I had no alternative but it was far from being good and it took me more time than I ever thought and more than 200 lines of code.
+- **Your code probably has more side-effects on the software than you think**. Be careful when writing new code.
+- **Git**. You don’t understand how much I had to push myself to do some esoteric git commands because I missed the branch, forced push something wrong, someone pushed changes exactly in the file I was and now I have to resolve merge conflicts, rebasing… I thought I knew something of Git but nah.
+- **Communication**. Don't be ashamed to ask. There are people that were in the project way before you and can give you some advice, you will learn a lot with them. 
+- **Tests are complex**. Always do them but take care of decisions, mock things cause overengineering and most of the time it's not necessary. Table-driven tests can be bad in some places.
+- **Concurrency is important**. Even on a small project like Keploy I had trouble with outputs being mixed on stdout because the API Tester were run concurrently. At first I thought it was my code but another guy also stated a problem with race conditions. I think they already solved it.
+- **Designing your implementation as a proposal is hard but it's worth it**. I had to write features on a document and kind of explain the purpose of the feature and how it would be implemented. This is solid as rock. Always try to first model your changes, don't go coding without thinking, write it on a paper, draw diagrams and try to understand how this feature will “glue” with others.
 
 There were more things I learned and more history that happened. GSoC is a great place to start in open-source, not necessary, but worth it if you want more collaborative development. The key thing is just to start. I hope you have a great day!
-Resources:
-My proposal: 
+
+### Resources:
+- My proposal: [Link to a PDF]({{ site.baseurl }}{% link assets/gsocproposal2023Keploy.pdf %})
+- Keploy: [https://github.com/keploy/keploy](https://github.com/keploy/keploy)
+- Me while doing the program: 
+
+<img src="{{ site.baseurl }}/assets/spring.jpg" alt="description" width="400"/>
+
+
