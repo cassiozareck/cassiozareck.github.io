@@ -33,7 +33,7 @@ I will make this in points since this was a wonderful experience where I learned
 
 There were more things I learned and more history that happened. GSoC is a great place to start in open-source, not necessary, but worth it if you want more collaborative development. The key thing is just to start. I hope you have a great day!
 
-### Resources:
+### Resources
 - My proposal: [Link to a PDF]({{ site.baseurl }}{% link assets/gsocproposal2023Keploy.pdf %})
 - Keploy: [https://github.com/keploy/keploy](https://github.com/keploy/keploy)
 - Me while doing the program: 
