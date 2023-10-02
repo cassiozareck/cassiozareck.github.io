@@ -18,7 +18,7 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Zareck # the main title
+title: zareck # the main title
 
 tagline: A self-taught backend software dev. # it will display as the sub-title
 

@@ -2,7 +2,7 @@
 title: A journey into open-source
 date: 2023-05-04 12:00:00 -500
 categories: [professional]
-tags: [go, open-source, team, learning, experience]
+tags: [go, open-source, keploy, team, learning, experience]
 ---
 
 It was February. I’d never contributed to open-source before. Barely I saw some repositories and became scared of how people could read more than 10k of code and understand how things work. I was wondering how I could start in this world, even more when I was really liking Golang’s world (you know, for a junior to land a job on a Go job probably his efforts would be 2x than any Node or Python junior dev).
