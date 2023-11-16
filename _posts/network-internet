@@ -26,9 +26,15 @@ explanation we suppose we're using linux. This send_data we were talking about i
 Network interface is a connection between a device and a network, you can write data in it and it will appear into another point, just like 
 our send_data function did when sending data to a router. One device can have more than one interface and you can list them in using `ip addr show`
 command. 
+
 Every device on the network including our router will have these interfaces to communicate between each other, and if you look they're bound
-with a MAC address (and also an IP but I'll talk about it later). Your PC probably will have at least 2 interfaces, a loopback (which redirects packets 
-to your own machine), and you
+with a MAC address (and usually an IP but I'll talk about it later). Your PC probably will have at least 2 interfaces, a loopback (which redirects packets 
+to your own machine), and an local network interface which binds your PC with the router and the local network, it's generally called enp3s0 in 
+linux-systems. There can also be virtualized interfaces which I'll talk more in a future post about docker network.
+
+Now, interface is a very important concept because your data travels through it, your PC has a table with MAC addresses and interfaces associated
+
+Suppose you 
 
 ### Layer 3 (IP): Going outside
 ### Subnet Mask
