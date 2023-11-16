@@ -1,0 +1,23 @@
+How the internet works?
+I want to start this by explaining how technologies evolved over the time, not how we actually see them, so we can see the problems and why things are the way
+they are. I'm not gonna talk about layer 1 since I'm not too used and its just the physical layer with some electrons running over a cable or wireless
+
+### Layer 2 (data link): Local network, the begin
+In this layer we don't have an IP, routing rules, NAT... we are in a very primordial and simple environment.  
+But it's not just a mess. In this layer we have the Data link protocol that defines every device needs to have its own MAC address, 
+which is an 48-bit unique identifier for it. Every network cardboard has an unique MAC by fabric.  
+
+Well, lets suppose we have PC 1 and PC 2. We only have a MAC address for each one but we want to send packets (normal data) from PC 1 to PC 2. 
+Well we can use some medium to do that, like the ethernet physical cable (layer 1) and bind it directly to PC 2. But this is not a network, 
+it's just a connection. We need someone that can route to several devices by just using a MAC identifier instead of plug direct cables. This 
+is why a router exist.
+
+
+### Layer 3 (IP): Going outside
+### Subnet Mask
+### NAT and its implications
+
+### TCP and UDP
+
+
+
