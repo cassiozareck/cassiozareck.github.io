@@ -16,10 +16,19 @@ Ok, we need some device that every device will be plugged and send data, and onc
 device I want. Let's call this device a router. But how does this device will know which device forward a network packet?
 
 We need some identifier for each PC, lets call this identifier a MAC Address (every network card comes with an unique 48-bit MAC address
-by default). Every plug on router will be bind to one MAC address. Now we modify a bit our send_data function to send_data(mac, data). 
+by default). Now we modify a bit our send_data function to send_data(mac, data). Remember, this router is just another device with this
+send_data function. But it keeps track of a table with each MAC address bind to one ethernet cable.
 
-But it's not just a mess. In this layer we have the Data link protocol that defines every device needs to have its own MAC address, 
-which is an 48-bit unique identifier for it. Every network cardboard has an unique MAC by fabric.  
+Now, jumping on the real world, this process has a lot of details didn't covered and in fact, every device will have an OS, to continue the 
+explanation we suppose we're using linux. This send_data we were talking about is implemented in most operating system as interfaces.
+
+### Interfaces: why so subestimated and how linux implement it. 
+Network interface is a connection between a device and a network, you can write data in it and it will appear into another point, just like 
+our send_data function did when sending data to a router. One device can have more than one interface and you can list them in using `ip addr show`
+command. 
+Every device on the network including our router will have these interfaces to communicate between each other, and if you look they're bound
+with a MAC address (and also an IP but I'll talk about it later). Your PC probably will have at least 2 interfaces, a loopback (which redirects packets 
+to your own machine), and you
 
 ### Layer 3 (IP): Going outside
 ### Subnet Mask
