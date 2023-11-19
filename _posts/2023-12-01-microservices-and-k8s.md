@@ -1,6 +1,6 @@
 ---
 title: "Little-ecom: microservices and k8s"
-date: 2023-10-01 13:00:00 -500
+date: 2023-12-01 13:00:00 -500
 categories: [professional]
 tags: [k8s, rabbitmq, microservices, mongodb, cloud, personal, learning, experience]
 ---
