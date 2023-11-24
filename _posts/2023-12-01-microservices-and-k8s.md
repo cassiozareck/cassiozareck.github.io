@@ -11,7 +11,7 @@ I want to explain in this post some of the process I've been through to build th
 https://github.com/cassiozareck/little-ecom/tree/main
 ### General architecture
 
-![](/assets/architecture.png)
+![Software architecture](/assets/architecture.png)
 
 ### Backend service 
 I started by building the backend service using Go. This backend service would be responsible to make crud operations on items (products). I'd chosen to use mongoDB because it's a NoSQL database, and I wanted to learn more about it. I wrote some Go code using mux and http library, deployed on Docker Hub, built the k8s manifest with 2 replicas and deployed it on my minikube cluster. But I was having nightmares to set up my mongo service. This is because mongo replicas cant be run over a deployment.
@@ -45,7 +45,7 @@ Oh, I had a big problem with it. Since I was using swagger to test my endpoints 
 Little-ecom also has an authentication service to safely register users using bcrypt with salts to store passwords. It also have an endpoint for SignIn and validate jwt tokens. I want to explain more in another post about tokens, sessions and how to safely store passwords. 
 
 ### Cluster network 
-I was having a lot of problems with DNS configuration, service communication and discovery. So I started to learn more about k8s network and dedicated a lot of my time on it. But first, we should talk about how containers network works (in theory, we should start by how the internet and normal network works, but I'm considering you read [my network's post](2023-11-19-network-and-internet.md)). 
+I was having a lot of problems with DNS configuration, service communication and discovery. So I started to learn more about k8s network and dedicated a lot of my time on it. But first, we should talk about how containers network works (in theory, we should start by how the internet and normal network works, but I'm considering you read [my network's post](/posts/network-and-internet/). 
 
 #### Docker network and how it works
 Docker has 4 main types of network: bridge, host, none and macvlan. In bridge mode, docker creates a virtual interface (remember layer 2?) and a virtual network (layer 3) where all containers are attached to. This means all containers can communicate with each other using this virtual network, and you can communicate with the outside world since it uses NAT. Generally, docker0 is the interface behind it.
