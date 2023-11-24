@@ -11,7 +11,7 @@ I want to explain in this post some of the process I've been through to build th
 https://github.com/cassiozareck/little-ecom/tree/main
 ### General architecture
 
-![](../assets/architecture.png)
+![](/assets/architecture.png)
 
 ### Backend service 
 I started by building the backend service using Go. This backend service would be responsible to make crud operations on items (products). I'd chosen to use mongoDB because it's a NoSQL database, and I wanted to learn more about it. I wrote some Go code using mux and http library, deployed on Docker Hub, built the k8s manifest with 2 replicas and deployed it on my minikube cluster. But I was having nightmares to set up my mongo service. This is because mongo replicas cant be run over a deployment.
