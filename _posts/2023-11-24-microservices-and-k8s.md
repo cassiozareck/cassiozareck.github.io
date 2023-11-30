@@ -2,7 +2,10 @@
 title: "Little-ecom: microservices"
 date: 2023-11-24 13:00:00 -500
 categories: [professional]
-tags: [k8s, rabbitmq, microservices, mongodb, cloud, personal, learning, experience]
+tags: [k8s, rabbitmq, microservices, api, rest, mongodb, cloud, personal, learning, experience]
+image:
+  path: "/assets/kubernetes.jpg"
+  alt: Microservices in kubernetes. Image by Growtika's under unsplash.com license
 ---
 
 It has been 2–3 months since I'm involved in a personal project called little-ecom. It's a small ecommerce API that I've built. It's capable of registering a user, buy a product, send emails, make CRUD operations on items and other basic functionalities. Its microservices-based, and it has 3 main services: backend, auth, notifier. But it has several other deployments and statefulsets needed to work like rabbitmq, mongodb and an efk stack. I want to explain here some of the process I've been through to build this project.

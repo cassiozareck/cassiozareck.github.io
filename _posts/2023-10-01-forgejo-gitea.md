@@ -2,7 +2,7 @@
 title: Experience in Gitea/Forgejo
 date: 2023-10-01 12:00:00 -500
 categories: [professional]
-tags: [orm, concurrency, open-source, team, go, software-design, gitea, forgejo, learning, experience]
+tags: [orm, concurrency, open-source, team, go, rest, api software-design, gitea, forgejo, learning, experience]
 ---
 
 

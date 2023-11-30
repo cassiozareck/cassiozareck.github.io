@@ -20,7 +20,7 @@ timezone:
 
 title: zareck # the main title
 
-tagline: A self-taught backend software dev. # it will display as the sub-title
+tagline: A self-taught software engineer # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.

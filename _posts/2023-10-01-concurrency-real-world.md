@@ -2,7 +2,7 @@
 title: Threads and concurrency on big softwares
 date: 2023-10-01 13:00:00 -500
 categories: [professional]
-tags: [concurrency, orm, open-source, team, go, software-design, gitea, forgejo, learning, experience]
+tags: [concurrency, orm, open-source, team, go, api, software-design, gitea, forgejo, learning, experience]
 ---
 
 
