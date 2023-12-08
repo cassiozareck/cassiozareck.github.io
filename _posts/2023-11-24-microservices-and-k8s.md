@@ -10,26 +10,26 @@ image:
 
 It has been 2–3 months since I'm involved in a personal project called little-ecom. It's a small ecommerce API that I've built. It's capable of registering a user, buy a product, send emails, make CRUD operations on items and other basic functionalities. Its microservices-based, and it has 3 main services: backend, auth, notifier. But it has several other deployments and statefulsets needed to work like rabbitmq, mongodb and an efk stack. I want to explain here some of the process I've been through to build this project.
 
-I want to explain in this post some of the process I've been through to build this project. I'll not go into details of how to build each service, but I'll talk about the problems I faced and how I solved them. If you want to see the code, it's available on github:
+I want to explain in this post some of the process I've been through to build this project. Though I'll not go into details of how to build each service, but I'll talk about the problems I faced and how I solved them. If you want to see the code, it's available on github:
 https://github.com/cassiozareck/little-ecom/tree/main
 ### General architecture
 
 ![Software architecture](/assets/architecture.png)
 
 ### Backend service 
-I started by building the backend service using Go. This backend service would be responsible to make crud operations on items (products). I'd chosen to use mongoDB because it's a NoSQL database, and I wanted to learn more about it. I wrote some Go code using mux and http library, deployed on Docker Hub, built the k8s manifest with 2 replicas and deployed it on my minikube cluster. But I was having nightmares to set up my mongo service. This is because mongo replicas cant be run over a deployment.
+I started by building the backend service using Go. This backend service would be responsible to make crud operations on items (products). I'd also take the design decision to make the backend interact with a mongo database because it's a NoSQL database and I wanted to learn more about it. I wrote some Go code using mux and http library, deployed on Docker Hub, built the k8s manifest with 2 replicas and deployed it on my minikube cluster. But I was having nightmares to set up my mongo service. This is because mongo replicas cant be run over a deployment.
 
 ### Mongo, StatefulSets and Helm charts 
-If you want to run your database with replicas and thus, data replication, you will need to store some state between its replicas. For example, in a mongo setup, you will need to store the data of each replica, so if one of them goes down, the other one can still serve the data. Also, you may want to store some metadata like the replica configuration. This is not feasible with a deployment because a deployment is a set of pods that can be scaled up and down, and if you scale down a pod, you will lose its data. So, you need to use a statefulset.
+If you want to run your database with replicas and thus, data replication, you will need to store some state between its replicas. For example, in a mongo setup, you will need to store the data (shared) of each replica since you want data replication. Also, you may want to store some metadata like the replica configuration (who writes who reads). This is not feasible with a deployment because a deployment is a set of pods that can be scaled up and down at anytime without context or previous state.
 
 Everything was ok if it wasn't the problem that when we work with multiple Mongo replicas, we need to configure them to know each other. Usually I had to join inside the running service and run some mongo commands to configure it. But if I had to reset the cluster by some reason, I would need to do the entire process again. Remembering each command and config.
 
 This is a common behavior, but since it wasn't being sustainable for me I started to learn about helms and instead of building the k8s manifest and configure mongo by myself I used an out-of-the-box bitnami mongo helm chart which automatizes this process. Helms charts are very powerful in the sense they abstract the complexity of configuring a service and make it easy to deploy, letting you overwrite a small set of common configurations.
 
 ### RabbitMQ and Notifier service
-I've also written a notifier service that'll send emails whenever new items are added into the application, but this implies a backend-notifier communication that needs to happen even with instability or be enqueued for notifier to read. So, I've deployed a RabbitMQ instance on the cluster and used a custom exchange to add messages in a queue where notifier would be a consumer.
+I've also written a notifier service that would send emails whenever new items are added to the application, but this implies a backend-notifier communication that needs to happen even with instability or be enqueued for notifier to read. So, I've deployed a RabbitMQ instance on the cluster and used a custom exchange to add messages in a queue where notifier would be a consumer.
 
-It had a couple of queues where I described in GitHub project's repo:
+I've made a couple of queues where I described better in GitHub project's repo:
 
 ```
 Queues
@@ -42,7 +42,7 @@ Queues
 ### Ingress and reverse proxy
 Since little-ecom has 2 main services supposed to be accessible (backend and auth). I needed to expose them to the outside world. I've used an ingress controller to do this. An ingress controller is a reverse proxy that will redirect requests to the correct service. In my case, I defined 2 http rules: if it starts with /auth goes to auth service, in case where it doesn't then should be redirected to the backend service. I've used nginx ingress controller, but there's also traefik and others.
 
-Oh, I had a big problem with it. Since I was using swagger to test my endpoints defined in an OpenAPI file, I had problems with CORS. Since swaggers were running on my browser, it asked for CORS permission to the backend service, but since it was running on a different domain, it was blocked. I've solved this by adding a CORS middleware on the backend service, it wasn't enough, so I also had to write a specification in the ingress controller to allow CORS. This gave me a lot of headaches.
+Oh, I had a big problem with it. Since I was using swagger to test my endpoints defined in an OpenAPI file, I had problems with CORS. Since swaggers were running on my browser, it asked for CORS permission to the backend service, but since backend was running on a different domain, it was blocked. I've solved this by adding a CORS middleware on the backend service, it wasn't enough, so I also had to write a specification in the ingress controller to allow CORS. This gave me a lot of headaches.
 
 ### Authentication service
 Little-ecom also has an authentication service to safely register users using bcrypt with salts to store passwords. It also have an endpoint for SignIn and validate jwt tokens. I want to explain more in another post about tokens, sessions and how to safely store passwords. 
