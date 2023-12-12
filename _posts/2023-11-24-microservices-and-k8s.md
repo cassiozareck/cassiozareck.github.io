@@ -52,6 +52,7 @@ I was having a lot of problems with DNS configuration, service communication and
 
 #### Docker network and how it works
 Docker has 4 main types of network: bridge, host, none and macvlan. In bridge mode, docker creates a virtual interface (remember layer 2?) and a virtual network (layer 3) where all containers are attached to. This means all containers can communicate with each other using this virtual network, and you can communicate with the outside world since it uses NAT. Generally, docker0 is the interface behind it.
+
 Now, with host mode it doesn't do NAT, instead, it shares a network namespace with the host. Network namespace is another useful resource linux has. Macvlan is one level above and uses your routers dhcp server to work like a real device on your local network. None is just a container without a network.
 
 #### K8s network

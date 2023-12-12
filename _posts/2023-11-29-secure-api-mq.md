@@ -1,5 +1,5 @@
 ---
-title: "Secure API | MQ"
+title: "Secure API | RabbitMQ"
 date: 2023-11-24 13:00:00 -500
 categories: [professional]
 tags: [auth, bcrypt, api, jwt, token, cryptography, rabbitmq, learning, experience]
@@ -43,10 +43,13 @@ SignIn and Validate are two endpoints for that, SignIn generates and Validate re
 JWT is generally stored as a cookie on client-side, so the browser stores it. Sessions on the other hand are data about user sessions stored on the server-side and identified by a string that is passed as a cookie to a browser. But even if JWT works like a session it doesn’t require the server to store any data. The data is self-contained inside the JWT string.
 
 ### Suggestions for improvements
-CSRF tokens: Unique, secret codes added to web forms to prevent unauthorized requests from other sites. It's like a hidden, one-time password for each form submission.
-2FA Authentication: Adds a second layer of security to account logins. After entering the password, the user must verify their identity through another method, like a text message code or an authentication app.
-Captcha:Challenges designed to tell humans and bots apart. These often involve recognizing distorted text, images, or solving simple puzzles.
-Limit routes: This involves setting a maximum number of requests that can be made to a particular endpoint within a certain time frame. For instance, limiting how many times a user can attempt to log in to prevent brute force attacks.
+- CSRF tokens: Unique, secret codes added to web forms to prevent unauthorized requests from other sites. It's like a hidden, one-time password for each form submission.
+
+- 2FA Authentication: Adds a second layer of security to account logins. After entering the password, the user must verify their identity through another method, like a text message code or an authentication app.
+
+- Captcha:Challenges designed to tell humans and bots apart. These often involve recognizing distorted text, images, or solving simple puzzles.
+
+- Limit routes: This involves setting a maximum number of requests that can be made to a particular endpoint within a certain time frame. For instance, limiting how many times a user can attempt to log in to prevent brute force attacks.
 
 ### RabbitMQ
 When I first designed little-ecom I started to think about backend and notifier communication. When implementing async queues a question that often arises is what kind of topology we’ll use and how. A topology is the architecture of our queues and exchanges, the flow of communication between different systems.
